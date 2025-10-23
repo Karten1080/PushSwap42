@@ -6,7 +6,7 @@
 #    By: asmati <asmati@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 19:04:34 by asmati            #+#    #+#              #
-#    Updated: 2025/10/23 19:10:28 by asmati           ###   ########.fr        #
+#    Updated: 2025/10/23 21:37:22 by asmati           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ all: $(NAME)
 # Construire l'exécutable. Les bibliothèques sont dépendances order-only
 # pour éviter le relink si seuls les .a ont été régénérés sans changement
 # des .o.
-$(NAME): $(OBJS) | $(LIBFT_LIB) $(PRINTF_LIB)
+$(NAME): $(OBJS) ./includes/push_swap.h $(LIBFT_LIB) $(PRINTF_LIB)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LDFLAGS)
 
 # Compilation des librairies si nécessaire
