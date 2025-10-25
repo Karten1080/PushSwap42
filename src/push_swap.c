@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 21:17:50 by asmati            #+#    #+#             */
-/*   Updated: 2025/10/23 18:17:39 by asmati           ###   ########.fr       */
+/*   Updated: 2025/10/25 14:39:35 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ int	main(int argc, char **argv)
 	pile->a = NULL;
 	pile->b = NULL;
 	if (!parse_args(argc, argv, &pile->a, 0))
-		return (free(pile), 1);
-	if (is_sorted(pile) == 0)
+		return (free_list(&pile->a), free(pile), 1);
+	if (pile->a && is_sorted(pile) == 0)
 		algo_redirect(pile);
 	free_list(&pile->a);
 	free_list(&pile->b);
